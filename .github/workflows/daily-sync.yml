@@ -1,0 +1,30 @@
+# Optional public mirror of the daily job: logs and last_run.json are visible to
+# anyone who can see the repo. Enable by adding the API_KEY repository secret.
+name: daily-sync
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: ${{ vars.ENABLE_GHA_SYNC == 'true' || github.event_name == 'workflow_dispatch' }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t kb-sync .
+      - name: Run sync (exits 0 on success)
+        run: |
+          mkdir -p out
+          docker run --rm \
+            -e API_KEY="${{ secrets.API_KEY }}" \
+            -e VECTOR_STORE_ID="${{ vars.VECTOR_STORE_ID }}" \
+            -e SUMMARY_PATH=/out/last_run.json -e OUTPUT_DIR=/out/articles \
+            -v "$PWD/out:/out" --user "$(id -u)" \
+            kb-sync main.py | tee out/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: last-run
+          path: out/

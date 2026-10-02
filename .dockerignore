@@ -1,0 +1,8 @@
+.git
+.env
+articles/
+artifacts/
+tests/
+docs/
+__pycache__/
+*.pyc

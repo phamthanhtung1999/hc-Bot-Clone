@@ -1,0 +1,29 @@
+# DigitalOcean App Platform spec: one scheduled job, no web service.
+#   doctl apps create --spec .do/app.yaml
+# Then set API_KEY (and VECTOR_STORE_ID) as encrypted env vars in the console.
+# Logs: App -> Activity -> Jobs -> <run>.
+name: kb-sync
+region: sgp
+jobs:
+  - name: daily-sync
+    kind: SCHEDULED
+    schedule:
+      cron: "0 2 * * *"   # 02:00 every day
+      time_zone: UTC
+    github:
+      repo: YOUR_GITHUB_USER/YOUR_REPO
+      branch: main
+      deploy_on_push: true
+    dockerfile_path: Dockerfile
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    envs:
+      - key: API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: VECTOR_STORE_ID
+        scope: RUN_TIME
+        value: ""
+      - key: VECTOR_STORE_NAME
+        scope: RUN_TIME
+        value: optibot-kb
