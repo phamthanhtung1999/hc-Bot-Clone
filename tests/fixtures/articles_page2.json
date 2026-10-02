@@ -1,0 +1,17 @@
+{
+  "count": 3,
+  "next_page": null,
+  "page": 2,
+  "page_count": 2,
+  "per_page": 2,
+  "articles": [
+    {
+      "id": 360016178374,
+      "html_url": "https://support.optisigns.com/hc/en-us/articles/360016178374-How-to-add-a-YouTube-video",
+      "title": "How to add a YouTube video",
+      "updated_at": "2026-05-01T10:00:00Z",
+      "draft": false,
+      "body": "<h2>Steps</h2><ol><li>Go to <strong>Files/Assets</strong>.</li><li>Click <strong>App</strong> and choose <strong>YouTube</strong>.</li><li>Paste the video URL and click <strong>Save</strong>.</li></ol>"
+    }
+  ]
+}

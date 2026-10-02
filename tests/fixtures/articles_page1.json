@@ -1,0 +1,28 @@
+{
+  "count": 3,
+  "next_page": "https://support.optisigns.com/api/v2/help_center/en-us/articles.json?page=2&per_page=2",
+  "page": 1,
+  "page_count": 2,
+  "per_page": 2,
+  "previous_page": null,
+  "articles": [
+    {
+      "id": 55906396437523,
+      "html_url": "https://support.optisigns.com/hc/en-us/articles/55906396437523-How-to-Use-the-Weather-Radar-App",
+      "title": "How to Use the Weather Radar App",
+      "updated_at": "2026-09-29T19:04:57Z",
+      "draft": false,
+      "locale": "en-us",
+      "section_id": 1,
+      "label_names": ["apps"],
+      "body": "<h3 id=\"h_01M3Q8E3HXDK5Z4Y2MR7X4T1W2\"><span style=\"color: #434343;\">In this article, we'll set up the Weather Radar app so a live precipitation radar map plays on your OptiSigns screens.</span></h3><ul>\n<li data-list-item-id=\"e563128fd114a7c3517049ba18a4895f4\"><a href=\"#WhatYoullNeed\">What You'll Need</a></li>\n<li data-list-item-id=\"edd4ecd5104e03e7032ed87e35adef15b\"><a href=\"#HowItWorks\">How It Works</a></li>\n</ul><p>With the Weather Radar app, your screens show a live precipitation radar map for any location in the United States.</p><hr><p><a name=\"WhatYoullNeed\"></a></p><h2 id=\"h_01M3Q8E3HXTF9ZVS7Q5ZB3FAY4\">What You'll Need</h2><ul>\n<li>An OptiSigns account with Standard Plan or higher</li>\n<li>A location in the <strong>United States</strong>\n</li>\n</ul><figure class=\"wysiwyg-table\" style=\"width: 100%;\"><table style=\"margin-left: 0px;\"><tbody>\n<tr><td><p class=\"wysiwyg-text-align-center\"><strong>IMPORTANT</strong></p></td></tr>\n<tr><td>\n<p>Weather Radar currently covers the United States only.</p>\n<p><strong>NOTE:</strong> Looking for the windy.com map? See <a href=\"https://support.optisigns.com/hc/en-us/articles/360017964153\" target=\"_blank\" rel=\"noopener noreferrer\">How to Use Weather Apps in OptiSigns</a>.</p>\n</td></tr>\n</tbody></table></figure><hr><p><a name=\"HowItWorks\"></a></p><h2 id=\"h_01M3Q8E3HXZ2YKGXV0C8V9D0AV\">How It Works</h2><p>A new radar picture is published every 10 minutes. Read <a href=\"/hc/en-us/articles/360016178374\">Screen setup</a> first.</p><p><img src=\"//support.optisigns.com/hc/article_attachments/1/radar.png\" alt=\"Radar map\"></p><iframe src=\"//www.youtube.com/embed/abc123\" width=\"560\"></iframe><pre><code class=\"language-json\">{\"location\": \"New_York\", \"forecast\": true}</code></pre><script>trackPageView()</script><div class=\"promo-banner\">Upgrade now!</div><table><thead><tr><th>Plan</th><th>Radar</th></tr></thead><tbody><tr><td>Standard</td><td>Yes</td></tr><tr><td>Free</td><td>No</td></tr></tbody></table>"
+    },
+    {
+      "id": 1,
+      "html_url": "https://support.optisigns.com/hc/en-us/articles/1-Draft",
+      "title": "Draft article",
+      "draft": true,
+      "body": "<p>secret</p>"
+    }
+  ]
+}
