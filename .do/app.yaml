@@ -11,7 +11,7 @@ jobs:
       cron: "0 2 * * *"   # 02:00 every day
       time_zone: UTC
     github:
-      repo: phamthanhtung1999/Optisigns-OptiBot-Mini-Clone
+      repo: phamthanhtung1999/hc-Bot-Clone
       branch: main
       deploy_on_push: true
     dockerfile_path: Dockerfile
