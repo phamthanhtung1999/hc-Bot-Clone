@@ -34,6 +34,9 @@ class Settings:
     upload_workers: int = 4
     prune: bool = False  # delete vector-store files whose article disappeared
     model: str = "gpt-5-mini"  # only used by ask.py
+    # Optional public run log: every run updates this GitHub Gist (see kbsync/publish.py).
+    gist_id: str = ""
+    gist_token: str = ""
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -54,4 +57,6 @@ class Settings:
             upload_workers=int(env("UPLOAD_WORKERS") or cls.upload_workers),
             prune=_bool(env("PRUNE")),
             model=env("MODEL") or cls.model,
+            gist_id=env("LOG_GIST_ID") or "",
+            gist_token=env("LOG_GIST_TOKEN") or "",
         )

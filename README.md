@@ -42,9 +42,14 @@ A second run prints `RESULT added=0 updated=0 skipped=N`. Each run also writes `
 
 ## Daily job
 The job is deployed on **DigitalOcean App Platform** as a scheduled job (`.do/app.yaml`, cron `0 2 * * *` UTC). Set `API_KEY` as an encrypted env var.
-- **Job logs:** _<add link: App → Activity → Jobs>_
-- **Last run artefact:** _<add link>_
-- **Public mirror (optional):** `.github/workflows/daily-sync.yml` runs the same image and uploads `last_run.json` and `run.log`.
+DigitalOcean only shows job logs to account members. To give the logs a public URL, every run publishes its own log to a GitHub Gist (`LOG_GIST_ID`, `LOG_GIST_TOKEN`). Each run becomes a new Gist revision, and `history.tsv` keeps one line per run.
+- **Job logs (public):** <https://gist.github.com/phamthanhtung1999/b452e78454ff54f44179236b6decdf84>
+  - `run.log`: log of the latest run
+  - `last_run.json`: summary of the latest run
+  - `history.tsv`: every run
+  - **Revisions** tab: older runs
+- **DO console:** screenshot `docs/do-job-runs.png`
+- **Public mirror (optional):** `.github/workflows/daily-sync.yml` runs the same image on GitHub Actions.
 
 ## Assistant
 The Assistants API was retired on 2026-08-26, so OptiBot is a saved **Prompt** in the OpenAI Playground: the verbatim system prompt (`kbsync/prompt.py`) plus the File search tool pointed at the `optibot-kb` store. `ask.py` makes the same call through the Responses API.

@@ -1,6 +1,6 @@
 # DigitalOcean App Platform spec: one scheduled job, no web service.
 #   doctl apps create --spec .do/app.yaml
-# Then set API_KEY (and VECTOR_STORE_ID) as encrypted env vars in the console.
+# Then add API_KEY and LOG_GIST_TOKEN (tick Encrypt) in the console; VECTOR_STORE_ID is optional.
 # Logs: App -> Activity -> Jobs -> <run>.
 name: kb-sync
 region: sgp
@@ -27,3 +27,6 @@ jobs:
       - key: VECTOR_STORE_NAME
         scope: RUN_TIME
         value: optibot-kb
+      - key: LOG_GIST_ID
+        scope: RUN_TIME
+        value: "b452e78454ff54f44179236b6decdf84"
