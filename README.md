@@ -48,7 +48,7 @@ DigitalOcean only shows job logs to account members. To give the logs a public U
   - `last_run.json`: summary of the latest run
   - `history.tsv`: every run
   - **Revisions** tab: older runs
-- **DO console:** screenshot `docs/do-job-runs.png`
+- **DO console:** screenshot [`docs/do-job-log.png`](docs/do-job-log.png)
 - **Public mirror (optional):** `.github/workflows/daily-sync.yml` runs the same image on GitHub Actions.
 
 ## Assistant
